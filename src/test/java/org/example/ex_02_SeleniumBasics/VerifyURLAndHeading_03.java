@@ -20,6 +20,8 @@ public class VerifyURLAndHeading_03 {
         else {
             throw new Exception("CURA Healthcare Service is not visible");
         }
-
+        Thread.sleep(3000);
+        driver.close(); //to closed the current tab
+        driver.quit(); //to close the all tabs i.e. close browser instance
     }
 }
