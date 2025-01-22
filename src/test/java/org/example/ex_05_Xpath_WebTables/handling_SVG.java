@@ -16,10 +16,12 @@ public class handling_SVG {
     public void test_SVGElements() throws Exception {
 
         WebDriver driver = new EdgeDriver();
-        driver.get("https://www.amcharts.com/svg-maps/?map=india");
         driver.manage().window().maximize();
 
-        List <WebElement> states = driver.findElements(By.xpath("//*[name()='svg']/*[name()='g'][7]/*[name()='g']/*[name()='g']"));
+        driver.get("https://www.amcharts.com/svg-maps/?map=india");
+
+
+        List <WebElement> states = driver.findElements(By.xpath("//*[name()='svg']/*[name()='g'][7]/*[name()='g']/*[name()='g']/*[name()='path']"));
 
         for(WebElement state: states){
             System.out.println(state.getDomAttribute("aria-label"));
