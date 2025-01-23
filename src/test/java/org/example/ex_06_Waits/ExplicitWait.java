@@ -34,15 +34,16 @@ public class ExplicitWait {
         WebElement submitButton = driver.findElement(By.id("js-login-btn"));
         submitButton.click();
 
-        WebDriverWait wait =new WebDriverWait(driver, Duration.ofSeconds(3000));
+        WebDriverWait wait =new WebDriverWait(driver, Duration.ofSeconds(3));
 
         WebElement errorMessage = driver.findElement(By.className("notification-box-description"));
+        wait.until(ExpectedConditions.visibilityOf(errorMessage));
         wait.until(ExpectedConditions.textToBePresentInElement(errorMessage,"Your email, password, IP address or location did not match"));
 
         Assert.assertEquals(errorMessage.getText(),"Your email, password, IP address or location did not match");
 
 
-       // driver.quit(); //to close the current tab
+        driver.quit(); //to close the current tab
     }
 
 }
