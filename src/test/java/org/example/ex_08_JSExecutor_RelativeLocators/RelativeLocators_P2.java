@@ -33,7 +33,7 @@ public class RelativeLocators_P2 {
         driver.get("https://www.aqi.in/real-time-most-polluted-city-ranking");
 
         List<WebElement> search_box = driver.findElements(By.xpath("//input[@type='search']"));
-        search_box.get(1).sendKeys("India"+ Keys.ENTER);
+        search_box.get(1).sendKeys("India");
 
         Thread.sleep(3000);
         List<WebElement> all_Locations = driver.findElements(By.cssSelector("div.location-name > p"));
